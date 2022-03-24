@@ -14,13 +14,13 @@
 							<!-- <p class="lead mb-4">Nice to see you! Please log in with your account.</p>-->
 
 							<!-- Form START -->
-							<form>
+							<form [formGroup]="loginForm">
 								<!-- Email -->
 								<div class="mb-4">
 									<!--<label for="exampleInputEmail1" class="form-label">Email</label>-->
 									<div class="input-group input-group-lg">
 										<span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi-envelope-fill"></i></span>
-										<input type="email" required="" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1">
+										<input type="email" formControlName="email" required="" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1">
 									</div>
 								</div>
 								<!-- Password -->
@@ -28,7 +28,7 @@
 									<!--<label for="inputPassword5" class="form-label">Password</label>-->
 									<div class="input-group input-group-lg">
 										<span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-lock"></i></span>
-										<input type="password" required="" class="form-control border-0 bg-light rounded-end ps-1" placeholder="password" id="inputPassword5">
+										<input type="password" formControlName="password" required="" class="form-control border-0 bg-light rounded-end ps-1" placeholder="password" id="inputPassword5">
 									</div>
 								</div>
 								<!-- Check box -->
@@ -46,7 +46,7 @@
 								<!-- Button -->
 								<div class="align-items-center mt-0">
 									<div class="d-grid">
-										<button class="btn btn-warning mb-0" type="button">Login</button>
+										<button class="btn btn-warning mb-0" [disabled]="!loginForm.valid" (click)="login()" type="button">Login</button>
 									</div>
 								</div>
 							</form>

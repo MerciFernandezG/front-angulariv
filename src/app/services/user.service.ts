@@ -19,4 +19,8 @@ import { baseUrl } from 'src/app/global';
     register(user: any): Observable<any> {
     return this.http.post(`http://localhost:3000/auth/register`, user);
   }
+
+  login(user: any): Observable<any> {
+    return this.http.post(`${baseUrl}/login`, user);
+  }
   }
